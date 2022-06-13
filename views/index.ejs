@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kdrama App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<section class="row">
+    <section class="column">
+        <h2>Input API Data Here</h2>
+        <form action="/api" method="POST">
+            <input type="text" placeholder="name" name="name">
+            <input type="text" placeholder="title" name="title">
+            <input type="text" placeholder="numberOfEpisodes" name="numberOfEpisodes">
+            <input type="text" placeholder="leadActors" name="leadActors">
+            <input type="text" placeholder="networks" name="networks">
+            <input type="text" placeholder="originalRelease" name="originalRelease">
+            <textarea rows="5" cols="40" type="text" placeholder="synopsis" name="synopsis"></textarea>
+            <input type="text" placeholder="image" name="image">
+            <button type="submit">SUBMIT NEW</button>
+            <button type="button" id="updateButton">UPDATE EXISTING</button>
+        </form>
+    </section>
+    <section class="column">
+        <h2>Delete API Data HERE</h2>
+        <input type="text" placeholder="name to delete" name="deleteInput" id="deleteInput">
+        <button id="deleteButton">DELETE</button>
+
+        <h2>Current Kdramas</h2>
+        <ul class="kdramas">
+            <% for(let i=0; i< info.length; i++) {%>
+                <li class="kdrama">
+                    <span><%= info[i] %></span>
+                </li>
+            <% } %>
+        </ul>
+    </section>
+</section>
+<script type="text/javascript" src="main.js"></script>    
+</body>
+</html>
